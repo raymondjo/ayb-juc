@@ -76,12 +76,13 @@ class RDController extends Controller
             $newRD->expire_date = $request->input('expire_date');
         }
         if ($request->input('need_or_not') !== null ){
-            $newRD->need_or_not = $request->input('need_or_not');
+            $newRD->need_or_not = $request->input('need_or_not')=== 'true'? true : false;
         }
-        $newRD->save();
-return $request;
-        // return $request;
+        $newRD->micro = $request->input('micro');
+        $newRD->sts = $request->input('sts');
 
+        $newRD->save();
+      return redirect('rd/'.$newRD->id);
     }
 
     /**
@@ -92,7 +93,9 @@ return $request;
      */
     public function show($id)
     {
-        //
+        // if fail it will return 404 to user
+        $rd = rd::findOrFail($id);
+        return view("rd.show", ["rd"=>$rd]);
     }
 
     /**
