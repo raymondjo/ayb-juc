@@ -110,11 +110,11 @@
 
                 <div class="form-group">
                     <label for="micro">Micro</label>
-                    <textarea class="form-control" rows="4" name="micro" placeholder="micro">{{$rd->micro}}</textarea>
+                    <textarea class="form-control" rows="4" name="micro" disabled="disabled" placeholder="micro">{{$rd->micro}}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="sts">Sts</label>
-                    <textarea class="form-control" rows="4" name="sts" placeholder="sts">
+                    <textarea class="form-control" rows="4" name="sts" disabled="disabled" placeholder="sts">
                     {{$rd->sts}}
                 </textarea>
                 </div>
@@ -134,7 +134,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <h4>expiration date</h4>
-                            <input class="date form-control" type="text" name="expire_date">
+                          <p>{{ $rd->expire_date}}</p>
                         </div>
                     </div>
                 </div>
@@ -142,7 +142,7 @@
 
                 <div class="form-group row">
                     <div class="offset-sm-3 col-sm-9">
-                        <button type="submit" class="btn btn-primary">Submit rd</button>
+                        <button type="submit" class="btn btn-primary">edit</button>
                     </div>
                 </div>
         </div>

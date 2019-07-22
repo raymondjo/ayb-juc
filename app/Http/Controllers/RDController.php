@@ -14,9 +14,13 @@ class RDController extends Controller
      */
     public function index()
     {
-        //
-        return view('rd.create');
-
+        try {
+            $rds = rd::paginate(3);
+            return view('rd.index', ['rds' => $rds]);
+        }
+        catch(Exception $e ){
+            abort(404);
+        }
     }
 
     /**
@@ -27,6 +31,8 @@ class RDController extends Controller
     public function create()
     {
         //
+        return view('rd.create');
+
         //return view('rd.create');
 
     }
@@ -39,8 +45,8 @@ class RDController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        //return $request;
+        try{
+
         $newRD = new rd();
 
         $newRD->responsible_name = $request->input('responsible_name');
@@ -82,7 +88,11 @@ class RDController extends Controller
         $newRD->sts = $request->input('sts');
 
         $newRD->save();
-      return redirect('rd/'.$newRD->id);
+        return redirect('rd/'.$newRD->id);
+        }
+        catch (Exception $e){
+            abort(404);
+        }
     }
 
     /**
