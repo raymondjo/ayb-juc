@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\rd;
+use Carbon\Carbon;
 class RDController extends Controller
 {
     /**
@@ -22,7 +23,24 @@ class RDController extends Controller
             abort(404);
         }
     }
+ /**
+     * Display a listing of the resource for need.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function need()
+    {
+        try {
+            $date_now = Carbon::now();
+            $date_now  = $date_now ->toDateString();
 
+            $rds = rd::where( 'expire_date' ,'<', $date_now )->paginate(3);
+            return view('rd.index', ['rds' => $rds]);
+        }
+        catch(Exception $e ){
+            abort(404);
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *

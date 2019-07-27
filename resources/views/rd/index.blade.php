@@ -4,7 +4,7 @@
 @section('content')
 <div class="container">
 
-<h2>Rd Tables</h2>
+<h2>Rd cases</h2>
 
   <table class="table table-striped">
     <thead>
@@ -13,6 +13,7 @@
         <th>Responsible Name</th>
         <th>address</th>
         <th>husband Name</th>
+        <th>expire date</th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +24,8 @@
         <td>{{ $rd->responsible_name}}</td>
         <td>{{ $rd->address}}</td>
         <td>{{ $rd->husband_name}}</td>
+        <td>{{ $rd->expire_date}}</td>
+
       </tr>
 
 

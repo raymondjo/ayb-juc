@@ -116,7 +116,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <h4>expiration date</h4>
-                            <input class="date form-control" type="text" required="true" name="expire_date">
+                            <input class="expiredate form-control" type="text" required="true" name="expire_date">
                         </div>
                     </div>
                 </div>
@@ -132,8 +132,8 @@
         <!-- <div class="col-md-4">dewewe</div> -->
     </div>
 </div>
-<script type="text/javascript">11
-    $('.date').datepicker({
+<script type="text/javascript">
+    $('.expiredate').datepicker({
         format: 'yyyy-mm-dd'
     });
 </script>

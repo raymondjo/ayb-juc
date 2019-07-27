@@ -15,4 +15,6 @@ Auth::routes();
 
 Route::get('/', 'RDController@index');
 
+Route::get('rd/need', 'RDController@need');
+
 Route::resource('rd', 'RDController');
