@@ -13,7 +13,7 @@
 
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
@@ -29,7 +29,6 @@
 
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/lib   s/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet"> -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
 
 </head>
 <body>
@@ -48,16 +47,24 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/rd/create') }}">create rd</a>
+                                <a class="nav-link" href="{{ url('/rd/searchpage') }}">Search</a>
                             </li>
                     <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/rd/need') }}">need rd</a>
+                                <a class="nav-link" href="{{ url('/rd/create') }}">Create rd</a>
                             </li>
+                    <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/rd/extend-expire-date') }}">Extend expire date</a>
+                            </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/rd/need-or-not') }}">Need</a>
+                    </li>
+                           
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

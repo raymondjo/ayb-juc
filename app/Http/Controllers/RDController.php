@@ -23,12 +23,48 @@ class RDController extends Controller
             abort(404);
         }
     }
+
+    public function searchIndex(){
+        return view('rd.search');
+    }
+    public function searching(Request $request){
+        try{
+            $id = $request->search;
+        
+            $rds = rd::where( 'husband_national_id' ,'=', $id )
+                    ->orWhere( 'wife_national_id' ,'=', $id )
+                    ->paginate(3);
+
+            return view('rd.index', ['rds' => $rds]);
+        } 
+          catch(Exception $e ){
+            abort(404);
+        }
+        
+    }
+    /**
+     * Display a listing of the resource for need.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function needOrNot()
+    {
+        try {
+            $rds = rd::where( 'need_or_not' ,'=', true )->paginate(5);
+            return view('rd.index', ['rds' => $rds]);
+        }
+        catch(Exception $e ){
+            
+            abort(404);
+        }
+    }
+
  /**
      * Display a listing of the resource for need.
      *
      * @return \Illuminate\Http\Response
      */
-    public function need()
+    public function extendExpireDate()
     {
         try {
             $date_now = Carbon::now();
@@ -38,6 +74,7 @@ class RDController extends Controller
             return view('rd.index', ['rds' => $rds]);
         }
         catch(Exception $e ){
+            
             abort(404);
         }
     }

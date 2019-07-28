@@ -15,6 +15,14 @@ Auth::routes();
 
 Route::get('/', 'RDController@index');
 
-Route::get('rd/need', 'RDController@need');
+Route::get('rd/extend-expire-date', 'RDController@extendExpireDate');
 
+Route::get('rd/need-or-not', 'RDController@needOrNot');
+
+
+Route::get('rd/searchpage', 'RDController@searchIndex');
+
+Route::get('rd/search', 'RDController@searching');
 Route::resource('rd', 'RDController');
+
+
