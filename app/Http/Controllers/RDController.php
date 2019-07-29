@@ -147,7 +147,7 @@ class RDController extends Controller
             // $temp   = "".$pieces[2]."-".$pieces[0]."-".$pieces[1];
             
             // $newRD->expire_date = $temp ;
-            $newRD->expire_date  = $request->input('expire_date')
+            $newRD->expire_date  = $request->input('expire_date');
         }
         
         if ($request->input('need_or_not') !== null ){
