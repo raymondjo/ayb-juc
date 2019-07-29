@@ -78,7 +78,7 @@ class RDController extends Controller
             $date_now = Carbon::now();
             $date_now  = $date_now ->toDateString();
 
-            $rds = rd::where( 'expire_date' ,'<', $date_now )->paginate(3);
+            $rds = rd::where( 'expire_date' ,'<', $date_now )->paginate(5);
             return view('rd.index', ['rds' => $rds]);
         }
         catch(Exception $e ){
