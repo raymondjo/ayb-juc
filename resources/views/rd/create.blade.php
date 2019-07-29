@@ -62,9 +62,14 @@
                         <input type="number" class="form-control" name="wife_national_id" min="11111111111111"
                             max="99999999999999" placeholder="wife national id">
                     </div>
-
+                    
                 </div>
-
+                <div class="form-group row">
+                    <label for="address" class="col-sm-3 col-form-label">Address</label>
+                    <div class="col-sm-9">
+                        <input name="address" type="text" class="form-control" placeholder="address">
+                    </div>
+                </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" value="true" name="cp">
                     <label class="form-check-label" for="cp">
@@ -115,8 +120,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
-                            <h4>expiration date</h4>
-                            <input class="expiredate form-control" type="text" required="true" name="expire_date">
+                            <h4>expiration date</h4> 
+                               <input data-provide="datepicker" class="expiredate form-control" type="text" required="true" >
+                               <!-- name="expire_date" -->
                         </div>
                     </div>
                 </div>
@@ -133,8 +139,12 @@
     </div>
 </div>
 <script type="text/javascript">
-    $('.expiredate').datepicker({
-        format: 'yyyy-mm-dd'
-    });
-</script>
+            $(function () {
+                $('.datepicker').datetimepicker({
+            format: 'mm/dd/yyyy',
+            startDate: '-3d'
+        });
+            });
+        </script>
+
 @endsection

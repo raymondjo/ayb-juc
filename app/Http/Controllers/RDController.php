@@ -8,6 +8,14 @@ use App\rd;
 use Carbon\Carbon;
 class RDController extends Controller
 {
+
+    /*
+    <script type="text/javascript">
+    $('.expiredate').datepicker({
+        format: 'yyyy-mm-dd'
+    });
+</script>
+ */
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +24,7 @@ class RDController extends Controller
     public function index()
     {
         try {
-            $rds = rd::paginate(3);
+            $rds = rd::paginate(5);
             return view('rd.index', ['rds' => $rds]);
         }
         catch(Exception $e ){
