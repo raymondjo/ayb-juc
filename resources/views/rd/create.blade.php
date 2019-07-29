@@ -121,7 +121,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <h4>expiration date</h4> 
-                               <input name="expire_date" class="expiredate form-control" type="text" required="true" >
+                               <input  class="datepicker form-control" type="text" required="true" name="expire_date" >
                                <!-- name="expire_date" -->
                         </div>
                     </div>
