@@ -142,7 +142,11 @@ class RDController extends Controller
             $newRD->joined = $request->input('joined') === 'true'? true : false;
         }
         if ($request->input('expire_date') !== null ){
-            $newRD->expire_date = $request->input('expire_date');
+            $request_date = $request->input('expire_date');
+            $pieces = explode("/", $request_date);
+            $temp   = "".$pieces[2]."-".$pieces[0]."-".$pieces[1];
+            
+            $newRD->expire_date = $temp ;
         }
         if ($request->input('need_or_not') !== null ){
             $newRD->need_or_not = $request->input('need_or_not')=== 'true'? true : false;
